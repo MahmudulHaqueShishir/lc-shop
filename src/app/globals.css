@@ -1,0 +1,319 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #1a1a1a;
+  background: #fafafa;
+}
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  background: #111827;
+  color: white;
+}
+
+.site-header .brand {
+  color: white;
+  font-weight: 700;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.site-header nav a {
+  color: #d1d5db;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.site-header nav a:hover {
+  color: white;
+}
+
+main {
+  max-width: 56rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem;
+}
+
+.product-emoji {
+  font-size: 2rem;
+}
+
+.product-name {
+  font-weight: 600;
+  margin: 0.4rem 0 0.2rem;
+}
+
+.product-desc {
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin: 0 0 0.6rem;
+  min-height: 2.4em;
+}
+
+.product-price {
+  font-weight: 700;
+  margin-bottom: 0.6rem;
+}
+
+button {
+  font-family: inherit;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border-radius: 6px;
+  border: 1px solid #111827;
+  background: #111827;
+  color: white;
+  padding: 0.5rem 0.9rem;
+}
+
+button:hover {
+  background: #1f2937;
+}
+
+button.secondary {
+  background: white;
+  color: #111827;
+}
+
+button.secondary:hover {
+  background: #f3f4f6;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.cart-line {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.cart-line-name {
+  flex: 1;
+  font-weight: 600;
+}
+
+.qty-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.qty-controls button {
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  line-height: 1;
+}
+
+.cart-summary {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 2px solid #111827;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.muted {
+  color: #6b7280;
+}
+
+.banner {
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.banner.success {
+  background: #dcfce7;
+  color: #14532d;
+}
+
+.banner.pending {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+.banner.error {
+  background: #fee2e2;
+  color: #7f1d1d;
+}
+
+.order-details {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 1rem 1.25rem;
+}
+
+.order-details dt {
+  color: #6b7280;
+  font-size: 0.85rem;
+  margin-top: 0.6rem;
+}
+
+.order-details dd {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.actions {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* --- Checkout: payment iframe + order ticket, side by side --- */
+
+.checkout-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 300px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .checkout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.checkout-payment-col {
+  min-height: 640px;
+}
+
+.checkout-payment-col h2 {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin: 0 0 0.6rem;
+}
+
+.lc-pay-mount-wrap {
+  position: relative;
+  min-height: 640px;
+}
+
+#lc-pay-container {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  overflow: hidden;
+  min-height: 640px;
+}
+
+.lc-pay-cta-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.order-ticket {
+  background: #111827;
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.order-ticket-label {
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #9ca3af;
+  margin: 0 0 0.2rem;
+}
+
+.order-ticket-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin: 0 0 1rem;
+  color: white;
+}
+
+.order-ticket-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #1f2937;
+}
+
+.order-ticket-item .name {
+  font-weight: 600;
+  color: white;
+}
+
+.order-ticket-item .meta {
+  font-size: 0.78rem;
+  color: #9ca3af;
+}
+
+.order-ticket-totals {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  display: flex;
+  justify-content: space-between;
+  color: #d1d5db;
+  font-size: 0.9rem;
+}
+
+.order-ticket-grand {
+  margin-top: 0.5rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #1f2937;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: white;
+}
+
+.order-ticket-grand .amount {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fb923c;
+}
+
+.order-ticket-footnote {
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: #6b7280;
+}
